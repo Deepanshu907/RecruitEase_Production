@@ -177,9 +177,11 @@ export const sendResetLinkController = async (req, res) => {
 };
 
 
-const { token } = req.params;
+
 export const showResetPasswordFormController = async (req, res) => {
+    const { token } = req.params;
   try {
+    
     jwt.verify(token, candidate_secret_key); // only to check token validity
     res.render("candidateResetPassword", { message: "", token }); // send token to view
   } catch (error) {
