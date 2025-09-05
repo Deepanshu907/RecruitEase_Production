@@ -157,7 +157,9 @@ export const sendResetLinkController = async (req, res) => {
 
         const token = jwt.sign({ email: candidate._id }, candidate_secret_key, { expiresIn: '1h' });
 
-        const resetLink = `http://localhost:3000/candidate/resetPassword/${token}`;
+        
+        // const resetLink = `${process.env.BASE_URL}/candidate/resetPassword/${token}`;
+        const resetLink = `${process.env.BASE_URL}/candidate/resetPassword/${token}`;
 
         const mailContent = `
             <h2>Reset Your Password</h2>
