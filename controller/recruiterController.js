@@ -232,7 +232,9 @@ export const sendResetLinkController = async (req, res) => {
 
     const token = jwt.sign({ email: recruiter._id }, recruiter_secret_key, { expiresIn: '10m' });
 
-    const resetLink = `http://localhost:3000/recruiter/reset-password/${token}`;
+    
+    const resetLink = `${process.env.BASE_URL}/candidate/resetPassword/${token}`;
+
     const mailContent = `
       <h2>Password Reset Request</h2>
       <p>Click the link below to reset your password:</p>
