@@ -1,0 +1,120 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    font-family: 'Segoe UI', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Brand */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar-logo {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.navbar-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #4a5fd3;
+    white-space: nowrap;
+}
+
+/* Menu */
+.navbar-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    padding: 6px 10px;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-menu a:hover {
+    color: #4a5fd3;
+    border-bottom: 2px solid #4a5fd3;
+}
+
+/* Banner */
+#banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+#banner_img {
+    width: 100%;
+    height: auto;
+    max-height: 520px; /* 👈 limit image height */
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Chat Icon */
+#chat-icon {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #4a5fd3;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .navbar-menu a {
+        width: 100%;
+    }
+
+    .navbar-title {
+        font-size: 18px;
+    }
+}
